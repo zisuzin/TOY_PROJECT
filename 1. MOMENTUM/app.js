@@ -86,8 +86,41 @@ const player2 = {
 // console.log(sum); 
 // console.log("다음 결과값의 총합은 " + sum + " 입니다.")
 
-// 조건문
+// 조건문 if
 // const age = prompt("how old are you?");
 // console.log(typeof "ㅎㅇ", typeof parseInt("ee"));
 // console.log("15" !== 15);
 // console.log(parseInt(age)); //변수 값을 정수화 하겠다 -> 정수(x): NaN 표시
+
+// const age = prompt("how old are you?"); // 문자를 숫자화
+
+
+//if(isNaN(age)){ // 조건이 숫자일 경우(true일 경우) 반환 
+//    console.log("숫자다!")
+//} else { // 조건이 문자일 경우(false일 경우) 반환
+//    console.log("문자다!")
+//};
+
+
+
+// 이벤트 처리 - 1. 이벤트리스너 사용
+// title.addEventListener("click",function(){
+    // console.log("title was clicked!"); 
+// });
+const title = document.querySelector(".title");
+
+// 이벤트 처리 - 2. oneventname 사용
+/*  title.onmouseover = function(){
+    console.log("event was hovered!")}; */
+
+
+
+ function mouseOver(){
+    console.log("event was executed");
+}
+
+// 오버시 이벤트 로깅
+title.addEventListener("mouseover",mouseOver);
+
+
+/* title.removeEventListener("mouseover",mouseOver); */
