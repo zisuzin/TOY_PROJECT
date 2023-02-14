@@ -10,12 +10,17 @@
             font-size: 50px;
             margin: 100px 50px;
         }
-    </style>
+
+        .hidden {
+            display: none;
+        }
+</style>
 </head>
 <body>
-    <div class="title">
-        <h1>hello!</h1>
-    </div>
-    <script src="./app.js"></script>
+    <form id="login_form"></form>
+    <input required maxlength="10" type="text" placeholder="what is your name?">
+    <input type="submit" value="LogIn">
+    <h1 id="greeting" class="hidden"></h1>
+    <script src="../js 이론/1.필기.js"></script>
 </body>
 </html>
