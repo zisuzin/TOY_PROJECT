@@ -8,9 +8,36 @@
         h2 {
             color: red;
         }
-    </style>
-    <script>
 
+        .active {
+            color: green;
+        }
+
+        .clicked {
+            color: black;
+        }
+    </style>
+</head> 
+<body>
+    <form id="login_form">
+        <!-- input의 유효성 검사를 작동시키기 위해서는
+        input이 form태그 안에 들어있어야함 ! -->
+        <input required maxlength="10" type="text" placeholder="what is your name?">
+        <!-- <input type="submit" value="LogIn"> -->
+        <button type="button">Log In</button>
+    </form>
+    <script>
+        const loginForm = document.getElementById("login_form");
+        const inp = document.querySelector("input");
+        const btn = document.querySelector("button");
+        
+
+        function onSubmit(event) {
+            event.preventDefault(); // 브라우저의 기본 동작을 제어 
+            console.log(event);
+        }
+
+        /* loginForm.addEventListener("submit",onSubmit); */
 
         /***************************************************** 
          1. 타이머함수 : setInterval, setTimeout
@@ -48,14 +75,7 @@
         };
         console.log('result:'+ txt(1,2,3,4)); */
 
-
-        /***************************************************** 
-         3. for in 문 
-        *****************************************************/
         
     </script>
-</head>
-<body>
-    <!-- <h2>0</h2> -->
 </body>
 </html>
