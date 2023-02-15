@@ -82,6 +82,7 @@ body {
     padding: 12px 8px 12px 110px;
     background: #eee;
     font-size: 18px;
+    height: 30px;
     transition: 0.3s;
     font-family: 'KyoboHandwriting2021sjy';
   }
