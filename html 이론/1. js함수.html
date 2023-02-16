@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>타이머함수 - setInterval/setTimeout</title>
+    <style>
+        h2 {
+            color: red;
+        }
+
+        .active {
+            color: green;
+        }
+
+        .clicked {
+            color: black;
+        }
+    </style>
+</head> 
+<body>
+    <form id="login_form">
+        <!-- input의 유효성 검사를 작동시키기 위해서는
+        input이 form태그 안에 들어있어야함 ! -->
+        <input required maxlength="10" type="text" placeholder="what is your name?">
+        <!-- <input type="submit" value="LogIn"> -->
+        <button type="button">Log In</button>
+    </form>
+    <script>
+        const loginForm = document.getElementById("login_form");
+        const inp = document.querySelector("input");
+        const btn = document.querySelector("button");
+        
+
+        function onSubmit(event) {
+            event.preventDefault(); // 브라우저의 기본 동작을 제어 
+            console.log(event);
+        }
+
+        /* loginForm.addEventListener("submit",onSubmit); */
+
+        /***************************************************** 
+         1. 타이머함수 : setInterval, setTimeout
+        *****************************************************/
+        /* const는 상수이므로 const로 변수 선언하면 에러 발생  */
+        /* let timer; */
+        /* setTimeout(() => { // 한 번만 호출
+            console.log(time++)
+        }, 1000); */
+        
+        /* let seconds = 1;
+        let timer;
+
+        timer = setTimeout(()=> {
+            console.log(seconds++);
+        },1000);
+ */
+        /* timer = setInterval(() => { // 정한 시간간격마다 연속 호출
+            let txt = document.querySelector("h2");
+            txt.textContent = seconds++;
+            if(seconds>5){
+                clearInterval(timer)
+            }
+        }, 1000); */
+        
+
+
+        /***************************************************** 
+         2. arguments 객체
+        *****************************************************/
+        /* function txt(){
+            for(var i = 0; i < arguments.length; i++){
+            console.log(i+':'+arguments[i]);
+        }   
+        };
+        console.log('result:'+ txt(1,2,3,4)); */
+
+        
+    </script>
+</body>
+</html>

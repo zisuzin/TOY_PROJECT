@@ -120,6 +120,12 @@ const player2 = {
 } */
 
 // 오버시 이벤트 로깅
+<<<<<<< HEAD:js 이론/1. js기본문법.js
+title.addEventListener("mouseover",mouseOver);
+
+
+/* title.removeEventListener("mouseover",mouseOver); */
+=======
 // title.addEventListener("mouseover",mouseOver);
 /* title.removeEventListener("mouseover",mouseOver); */
 
@@ -136,3 +142,4 @@ const greeting = document.querySelector("#greeting");
     }
 
 loginForm.addEventListener("submit",onLoginSubmit);
+>>>>>>> f9774339d0caf3d4173153cf9d7711b414374b7e:js 이론/1.필기.js
