@@ -49,7 +49,17 @@ function deleteItem() {
     // .getAttribute 속성방식 경우 내가 지정한 속성값을 가져옴
     // .속성명 프로퍼티방식 경우 내가 지정한 속성값이 아닌 요소의 실 속성값을 가져옴 
     let id = this.getAttribute("id");  
-    itemList.splice(id, 1);
+
+    // splice메서드는 아래 2가지 방식으로 사용할 수가 있음!
+    // 1. 인자 하나만 쓰는 경우:
+    // -> splice(순번) -> 순번부터 뒤 모두 지움
+    // 2. 인자 두개 쓰는 경우: 
+    // splice(순번,개수) -> 순번부터 몇개 지움  
+
+    // splice vs slice 메서드 비교 
+    // splice() 메서드는 원본 배열의 값을 대체
+    // slice() 메서드는 원본 배열의 값 유지
+    itemList.splice(id, 1); 
     showList();
 }
 
