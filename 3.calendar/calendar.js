@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 
 // 1. 달력 출력하기
 var currentTitle = document.getElementById('current-year-month');
@@ -15,6 +16,46 @@ if(first.getFullYear() % 4 === 0){
 }else{
     pageYear = notLeapYear;
 }
+=======
+const days = ["일", "월", "화", "수", "목", "금", "토"];
+const months = ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"];
+let newDate = new Date(); //함수 실행 시점의 날짜 및 시간 데이터 호출 
+let year = newDate.getFullYear(); //생성된 date객체에서 년도(4자리)를 호출
+let month = newDate.getMonth();
+let day = newDate.getDay();
+let week = days[day];
+let date = newDate.getDate();
+let selectYear = document.querySelector("#year")
+let selectMonth = document.querySelector("#month")
+let selectWeek = document.querySelector("#week")
+let selectDate = document.querySelector("#date")
+let table = document.querySelector("table");
+let td = document.querySelector("td");
+let dateNum = 0;
+let firstDay = 0;
+let lastDate = 0;
+let lastDay = 0;
+let clickDay = 0;
+let today = 0;
+let preTarget = 0;
+let preTargetText = 0;
+
+function clickDate(){
+    // tagName vs nodeName 차이 
+    // tagName 프로퍼티는 요소 노드에만 존재한다.
+    // nodeName은 모든 Node에 있다.
+    // 요소 노드를 대상으로 호출하면 tagName과 같은 역할을 한다.
+    // 텍스트 노드, 주석 노드 등에선 노드 타입을 나타내는 문자열을 반환한다.
+    if(event.target.tagName == "TD" && event.target.textContent !== ""){
+        if(preTarget !== 0 && (preTargetText != date || month != newDate.getMonth())){
+            preTarget.className = "";
+        }
+        if(event.target.textContent != date || newDate.getMonth() != month){
+            event.target.className = "click-circle";
+        }
+        selectDate.textContent = event.target.textContent + "일";
+        clickDay = firstDay + event.target.textContent % 7 - 1;
+>>>>>>> Stashed changes
 
 function showCalendar(){
     let monthCnt = 100;
