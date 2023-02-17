@@ -67,22 +67,21 @@ function deleteItem() {
 let checkList = document.querySelector('.item__list');
 checkList.addEventListener('click', event => {
   if (event.target.tagName === 'LI') {
-    event.target.classList.toggle('checked');
-  }
+    event.target.classList.toggle('checked')}
 });
 
 
 // 타이핑 효과 적용
-// const content = "To do list";
-// const txt = document.querySelector(".main__title > h1");
-// let idx = 0;
+const content = "To do list";
+const txt = document.querySelector(".main__title > h1");
+let idx = 0;
 
-// function typing(){
-//     txt.innerHTML += content[idx++]; 
-//     if(idx > content.length){
-//         txt.innerHTML = "";
-//         idx = 0;
-//     }
-// } 
-// setInterval(typing,200);
-// console.log(typing);
+function typing(){
+    txt.innerHTML += content[idx++]; 
+    if(idx > content.length){
+        txt.innerHTML = "";
+        idx = 0;
+    }
+} 
+setInterval(typing,200);
+console.log(typing);
