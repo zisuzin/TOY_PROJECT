@@ -1,88 +1,60 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="style.css">
-		<script src="calendar.js" type="text/javascript" defer></script>
-		<title>Calendar</title>
-	</head>
-	<body>
-		<div class="container">
-			<div class="item" id="today">
-				<div id="week"></div>
-				<div id="date"></div>
-			</div>
-		<div class="item"> 
-			<button type="button" onclick="prev()"><&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</button>
-			<div id="year" class="top-bar"></div>
-			<div id="month" class="top-bar"></div>
-			<button type="button" onclick="next()">&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;></button><br>
-			<table>
-				<tr>
-					<th>일</th>
-					<th>월</th>
-					<th>화</th>
-					<th>수</th>
-					<th>목</th>
-					<th>금</th>
-					<th>토</th>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-			</table>
-		</div>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <title>Vanilla Coding | Bootcamp Prep</title>
+</head>
+<body>
+  <div class="main">
+    <div class="content-wrap">
+      <div class="content-left">
+        <div class="main-wrap">
+          <div id="main-day" class="main-day"></div>
+          <div id="main-date" class="main-date"></div>
+        </div>
+        <div class="todo-wrap">
+          <div class="todo-title">Todo List</div>
+          <div class="input-wrap">
+            <input type="text" placeholder="please write here!!" id="input-box" class="input-box">
+            <button type="button" id="input-data" class="input-data">INPUT</button>
+            <div id="input-list" class="input-list"></div>
+          </div>
+        </div>
+      </div>
+      <div class="content-right">
+        <table id="calendar" align="center">
+          <thead>
+            <tr class="btn-wrap clearfix">
+              <td>
+                <label id="prev">
+                    &#60;
+                </label>
+              </td>
+              <td align="center" id="current-year-month" colspan="5"></td>
+              <td>
+                <label id="next">
+                    &#62;
+                </label>
+              </td>
+            </tr>
+            <tr>
+                <td class = "sun" align="center">Sun</td>
+                <td align="center">Mon</td>
+                <td align="center">Tue</td>
+                <td align="center">Wed</td>
+                <td align="center">Thu</td>
+                <td align="center">Fri</td>
+                <td class= "sat" align="center">Sat</td>
+              </tr>
+          </thead>
+          <tbody id="calendar-body" class="calendar-body"></tbody>
+        </table>
+      </div>
     </div>
-    </body>
+  </div>
+  <script src="./calendar.js"></script>
+</body>
 </html>

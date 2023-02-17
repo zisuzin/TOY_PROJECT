@@ -1,179 +1,240 @@
-const days = ["일", "월", "화", "수", "목", "금", "토"];
-const months = ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"];
-let newDate = new Date();
-let year = newDate.getFullYear();
-let month = newDate.getMonth();
-let day = newDate.getDay();
-let week = days[day];
-let date = newDate.getDate();
-let selectYear = document.querySelector("#year")
-let selectMonth = document.querySelector("#month")
-let selectWeek = document.querySelector("#week")
-let selectDate = document.querySelector("#date")
-let table = document.querySelector("table");
-let td = document.querySelector("td");
-let dateNum = 0;
-let firstDay = 0;
-let lastDate = 0;
-let lastDay = 0;
-let clickDay = 0;
-let today = 0;
-let preTarget = 0;
-let preTargetText = 0;
 
-function clickDate(){
-    if(event.target.nodeName == "TD" && event.target.textContent !== ""){
-        if(preTarget !== 0 && (preTargetText != date || month != newDate.getMonth())){
-            preTarget.className = "";
-        }
-        if(event.target.textContent != date || newDate.getMonth() != month){
-            event.target.className = "click-circle";
-        }
-        selectDate.textContent = event.target.textContent + "일";
-        clickDay = firstDay + event.target.textContent % 7 - 1;
+// 1. 달력 출력하기
+var currentTitle = document.getElementById('current-year-month');
+var calendarBody = document.getElementById('calendar-body');
+var today = new Date();
+var first = new Date(today.getFullYear(), today.getMonth(),1);
+var dayList = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+var monthList = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+var leapYear=[31,29,31,30,31,30,31,31,30,31,30,31];
+var notLeapYear=[31,28,31,30,31,30,31,31,30,31,30,31];
+var pageFirst = first;
+var pageYear;
+if(first.getFullYear() % 4 === 0){
+    pageYear = leapYear;
+}else{
+    pageYear = notLeapYear;
+}
 
-        if(clickDay < 0){
-            clickDay = clickDay + 7;
+function showCalendar(){
+    let monthCnt = 100;
+    let cnt = 1;
+    for(var i = 0; i < 6; i++){
+        var $tr = document.createElement('tr');
+        $tr.setAttribute('id', monthCnt);   
+        for(var j = 0; j < 7; j++){
+            if((i === 0 && j < first.getDay()) || cnt > pageYear[first.getMonth()]){
+                var $td = document.createElement('td');
+                $tr.appendChild($td);     
+            }else{
+                var $td = document.createElement('td');
+                $td.textContent = cnt;
+                $td.setAttribute('id', cnt);                
+                $tr.appendChild($td);
+                cnt++;
+            }
         }
-        else if(clickDay > 6){
-            clickDay = clickDay - 7;
-        }
-        selectWeek.textContent = days[clickDay] + "요일";
-        preTarget = event.target;
-        preTargetText = event.target.textContent;
+        monthCnt++;
+        calendarBody.appendChild($tr);
+    }
+}
+showCalendar();
+
+function removeCalendar(){
+    let catchTr = 100;
+    for(var i = 100; i< 106; i++){
+        var $tr = document.getElementById(catchTr);
+        $tr.remove();
+        catchTr++;
     }
 }
 
-function dateMaker(){
-    if(firstDay < 0){
-        firstDay = firstDay + 7;
-    }
-    else if(firstDay > 6){
-        firstDay = firstDay - 7;
-    }
-    for(let i = 0; i < firstDay; i++){
-        table.rows[1].cells[i].textContent = null;
-    }
-    for(let i = firstDay; i <= 6; i++){
-        dateNum++;
-        table.rows[1].cells[i].textContent = dateNum;
-    }
-    for(let i = 2; i <= 4; i++){
-        for(let j = 0; j <= 6; j++){
-            dateNum++;
-            table.rows[i].cells[j].textContent = dateNum;
-        }
-    }
-    lastDay = firstDay + (lastDate - 29);
-
-    if(lastDay > 6){
-        lastDay = lastDay - 7;
-
-        for(let i = 0; i <= 6; i++){
-            dateNum++;
-            table.rows[5].cells[i].textContent = dateNum;
-        }
-        for(let i = 0; i <= lastDay; i++){
-            dateNum++;
-            table.rows[6].cells[i].textContent = dateNum;
-        }
-        for(let i = lastDay + 1; i <= 6; i++){
-            table.rows[6].cells[i].textContent = null;
-        }
-    }
-    else{
-        for(let i = 0; i <= lastDay; i++){
-            dateNum++;
-            table.rows[5].cells[i].textContent = dateNum;
-        }
-        for(let i = lastDay + 1; i <= 6; i++){
-            dateNum++;
-            table.rows[5].cells[i].textContent = null;
-        }
-        for(let i = 0; i <= 6; i++){
-            table.rows[6].cells[i].textContent = null;
-        }
-    }
-    if(month === newDate.getMonth() && year === newDate.getFullYear()){
-        today = table.rows[Math.ceil((date + firstDay) / 7)].cells[day];
-        today.className = "today-circle";
-    }
-    else{
-        today.className = "";
-    }
-    preTarget.className = "";
-}
-function lastDateCheck(){
-    if(month === 3||month === 5||month === 8||month === 10){
-        lastDate = 30;
-    }
-    else if(month === 1){
-        if(year % 4 === 0){
-            lastDate = 29;
-        }
-        else{
-            lastDate = 28;
-        }
-    }
-    else{
-        lastDate = 31;
-    }
-}
-function firstDayDisplay(){
-    if(month !== newDate.getMonth() || year !== newDate.getFullYear()){
-        selectWeek.textContent = days[firstDay] + "요일";
-        selectDate.textContent = 1 + "일";
-    }
-    else{
-        selectWeek.textContent = week + "요일";
-        selectDate.textContent = date + "일";
-    }
-}
-
+// 2. 이전 달과 다음 달로 이동하기
 function prev(){
-    if(month === 0){
-        month = 11;
-        year--;
+    inputBox.value = "";
+    const $divs = document.querySelectorAll('#input-list > div');
+    $divs.forEach(function(e){
+      e.remove();
+    });
+    const $btns = document.querySelectorAll('#input-list > button');
+    $btns.forEach(function(e1){
+      e1.remove();
+    });
+    if(pageFirst.getMonth() === 1){
+        pageFirst = new Date(first.getFullYear()-1, 12, 1);
+        first = pageFirst;
+        if(first.getFullYear() % 4 === 0){
+            pageYear = leapYear;
+        }else{
+            pageYear = notLeapYear;
+        }
+    }else{
+        pageFirst = new Date(first.getFullYear(), first.getMonth()-1, 1);
+        first = pageFirst;
     }
-    else{
-        month--;
-    }
-    selectMonth.textContent = months[month];
-    selectYear.textContent = year + "년";
-
-    lastDateCheck()
-    dateNum = 0;
-    lastDay = firstDay - 1;
-    firstDay = firstDay - (lastDate - 28);
-
-    dateMaker();
-    firstDayDisplay();
+    today = new Date(today.getFullYear(), today.getMonth()-1, today.getDate());
+    currentTitle.innerHTML = monthList[first.getMonth()] + '&nbsp;&nbsp;&nbsp;&nbsp;'+ first.getFullYear();
+    removeCalendar();
+    showCalendar();
+    showMain();
+    clickedDate1 = document.getElementById(today.getDate());
+    clickedDate1.classList.add('active');
+    clickStart();
+    reshowingList();
 }
+
 function next(){
-    if(month === 11){
-        month = 0;
-        year++;
+    inputBox.value = "";
+    const $divs = document.querySelectorAll('#input-list > div');
+    $divs.forEach(function(e){
+      e.remove();
+    });
+    const $btns = document.querySelectorAll('#input-list > button');
+    $btns.forEach(function(e1){
+      e1.remove();
+    });
+    if(pageFirst.getMonth() === 12){
+        pageFirst = new Date(first.getFullYear()+1, 1, 1);
+        first = pageFirst;
+        if(first.getFullYear() % 4 === 0){
+            pageYear = leapYear;
+        }else{
+            pageYear = notLeapYear;
+        }
+    }else{
+        pageFirst = new Date(first.getFullYear(), first.getMonth()+1, 1);
+        first = pageFirst;
     }
-    else{
-        month++;
-    }
-    selectMonth.textContent = months[month];
-    selectYear.textContent = year + "년";
-
-    lastDateCheck()
-    dateNum = 0;
-    firstDay = lastDay + 1;
-
-    dateMaker();
-    firstDayDisplay();
+    today = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate());
+    currentTitle.innerHTML = monthList[first.getMonth()] + '&nbsp;&nbsp;&nbsp;&nbsp;'+ first.getFullYear();
+    removeCalendar();
+    showCalendar(); 
+    showMain();
+    clickedDate1 = document.getElementById(today.getDate());
+    clickedDate1.classList.add('active');  
+    clickStart();
+    reshowingList();
 }
-selectYear.textContent = year + "년";
-selectMonth.textContent = months[month];
-selectWeek.textContent = week + "요일";
-selectDate.textContent = date + "일";
-firstDay = newDate.getDay() - date % 7 + 1;
 
-lastDateCheck()
-dateMaker();
+// 3. 클릭해서 날짜 색상 변경 & 왼쪽 화면 변경
+function showMain(){
+    mainTodayDay.innerHTML = dayList[today.getDay()];
+    mainTodayDate.innerHTML = today.getDate();
+}
+var clickedDate1 = document.getElementById(today.getDate());
+clickedDate1.classList.add('active');
+var prevBtn = document.getElementById('prev');
+var nextBtn = document.getElementById('next');
+prevBtn.addEventListener('click',prev);
+nextBtn.addEventListener('click',next);
+var tdGroup = [];
+function clickStart(){
+    for(let i = 1; i <= pageYear[first.getMonth()]; i++){
+        tdGroup[i] = document.getElementById(i);
+        tdGroup[i].addEventListener('click',changeToday);
+    }
+}
+function changeToday(e){
+    for(let i = 1; i <= pageYear[first.getMonth()]; i++){
+        if(tdGroup[i].classList.contains('active')){
+            tdGroup[i].classList.remove('active');
+        }
+    }
+    clickedDate1 = e.currentTarget;
+    clickedDate1.classList.add('active');
+    today = new Date(today.getFullYear(), today.getMonth(), clickedDate1.id);
+    showMain();
+    keyValue = today.getFullYear() + '' + today.getMonth()+ '' + today.getDate();
+    reshowingList();
+}
 
-table.onclick = clickDate;
+// 4. Todo-List 입력, 체크, 삭제하기
+function reshowingList(){
+    keyValue = today.getFullYear() + '' + today.getMonth()+ '' + today.getDate();
+    if(todoList[keyValue] === undefined){
+        inputList.textContent = '';
+        todoList[keyValue] = [];
+        const $divs = document.querySelectorAll('#input-list > div');
+        $divs.forEach(function(e){
+          e.remove();
+        });
+        const $btns = document.querySelectorAll('#input-list > button');
+        $btns.forEach(function(e1){
+          e1.remove();
+        });
+    }else if(todoList[keyValue].length ===0){
+        inputList.textContent = "";
+        const $divs = document.querySelectorAll('#input-list > div');
+        $divs.forEach(function(e){
+          e.remove();
+        });
+        const $btns = document.querySelectorAll('#input-list > button');
+        $btns.forEach(function(e1){
+          e1.remove();
+        });
+    }else{
+        const $divs = document.querySelectorAll('#input-list > div');
+        $divs.forEach(function(e){
+          e.remove();
+        });
+        const $btns = document.querySelectorAll('#input-list > button');
+        $btns.forEach(function(e1){
+          e1.remove();
+        });
+        var $div = document.createElement('div');
+        for(var i = 0; i < todoList[keyValue].length; i++){
+            var $div = document.createElement('div');
+            $div.textContent = '-' + todoList[keyValue][i];
+            var $btn = document.createElement('button');
+            $btn.setAttribute('type', 'button'); 
+            $btn.setAttribute('id', 'del-ata');
+            $btn.setAttribute('id', dataCnt+keyValue);
+            $btn.setAttribute('class', 'del-data');
+            $btn.textContent = delText;
+            inputList.appendChild($div);
+            inputList.appendChild($btn);
+            $div.addEventListener('click',checkList);
+            $btn.addEventListener('click',deleteTodo);
+            inputBox.value = '';
+            function deleteTodo(){
+                $div.remove();
+                $btn.remove();
+            }
+        }
+    }
+
+}
+var inputBox = document.getElementById('input-box');
+var inputDate = document.getElementById('input-data');
+var inputList = document.getElementById('input-list');
+var delText = 'X';
+inputDate.addEventListener('click',addTodoList);
+var dataCnt = 1;
+var keyValue = today.getFullYear() + '' + today.getMonth()+ '' + today.getDate();
+let todoList = [];
+todoList[keyValue] = [];
+function addTodoList(){
+    var $div = document.createElement('div');
+    $div.textContent = '-' + inputBox.value;
+    var $btn = document.createElement('button');
+    $btn.setAttribute('type', 'button'); 
+    $btn.setAttribute('id', 'del-ata');
+    $btn.setAttribute('id', dataCnt+keyValue);
+    $btn.setAttribute('class', "del-data");
+    $btn.textContent = delText;
+    inputList.appendChild($div);
+    inputList.appendChild($btn);
+    todoList[keyValue].push(inputBox.value);
+    dataCnt++;
+    inputBox.value = '';
+    $div.addEventListener('click',checkList);
+    $btn.addEventListener('click',deleteTodo);
+    function deleteTodo(){
+        $div.remove();
+        $btn.remove();
+    }
+}
+console.log(keyValue);
+function checkList(e){
+    e.currentTarget.classList.add('checked');
+}
