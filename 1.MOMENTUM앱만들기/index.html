@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
@@ -9,16 +7,13 @@
   </head>
   <body>
     <form class="hidden" id="login-form">
-      <input
-        required
-        maxlength="15"
-        type="text"
-        placeholder="What is your name?"
-      />
+      <input required maxlength="15" type="text" placeholder="What is your name?"/>
       <input type="submit" value="Log In" />
     </form>
     <h2 id="clock">00:00</h2>
     <h1 class="hidden" id="greeting"></h1>
+    <script src="app.js"></script>
+    <script src="js/greetings.js"></script>
     <script src="js/clock.js"></script>
   </body>
 </html>

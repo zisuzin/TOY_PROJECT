@@ -120,26 +120,7 @@ const player2 = {
 } */
 
 // 오버시 이벤트 로깅
-<<<<<<< HEAD:js 이론/1. js기본문법.js
 title.addEventListener("mouseover",mouseOver);
 
 
 /* title.removeEventListener("mouseover",mouseOver); */
-=======
-// title.addEventListener("mouseover",mouseOver);
-/* title.removeEventListener("mouseover",mouseOver); */
-
-// 유저네임 정보 get
-const loginForm = document.querySelector("#login_form");
-const loginInput = document.querySelector("#login_form h1");
-const greeting = document.querySelector("#greeting");
-
-    function onLoginSubmit(event) {
-        event.preventDefault();
-        loginInput.classList.add("hidden");
-        const usrname = loginInput.value;
-        greeting.innerText = "hello " + usrname;
-    }
-
-loginForm.addEventListener("submit",onLoginSubmit);
->>>>>>> f9774339d0caf3d4173153cf9d7711b414374b7e:js 이론/1.필기.js
