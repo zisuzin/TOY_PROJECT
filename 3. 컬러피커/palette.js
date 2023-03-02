@@ -10,28 +10,27 @@ const palette = [["#b71c1c", "#c62828", "#d32f2f", "#e53935", "#f44336", "#ef535
 ["#01579b", "#0277bd", "#0288d1", "#039be5", "#03a9f4", "#29b6f6", "#4fc3f7", "#81d4fa", "#b3e5fc", "#e1f5fe"],
 ["#006064","#00838f", "#0097a7", "#00acc1", "#00bcd4", "#26c6da", "#4dd0e1", "#80deea", "#b2ebf2", "#e0f7fa"]];
 
+
 const item_wrap = qsa(".color > span");
-const back_ground = qs("body");
+const colorList = palette[Math.floor(Math.random()*palette.length)]; 
+
 
 for(let item of item_wrap) {
 
     item.addEventListener("click",()=>{
         item_wrap.forEach(ele=>ele.classList.remove("checked"));
         item.classList.add("checked");
+        document.body.style.backgroundColor = `${colorList}`;
     });
-
+    
     item.addEventListener("dblclick",()=>{
         item.classList.remove("checked");
+        document.body.style.backgroundColor = "transparent";
     });
-}
 
-function colorChange(){
-    const color = item.getAttribute(color);
-    item.addEventListener("click",()=>{
-        for(let i=0; i<item_wrap.length; i++){
-            back_ground.style.backGroundColor = "item[i]";
-        }
-    });
-}
+    // item.addEventListener("click",()=>{
+    //     document.body.style.background = 
 
+    // });
+} /// for of /// 
 
