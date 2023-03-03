@@ -1,0 +1,87 @@
+@charset "utf-8";
+
+/* A. 상단영역  */
+#headerWrap {
+    width: 100%;
+    height: 110px;
+    top: 0;
+    position: fixed;
+    background-color: #41414c;
+    z-index: 99999;
+}
+
+.headerBar {
+    padding: 0 70px;
+    height: 100%;
+    /* margin: 0 auto; */
+}
+
+.topHeader {
+    padding: 25px 0;
+    position: relative;
+    height: calc(100% - 50px);
+    width: 100%;
+}
+
+.topLogo {
+    text-align: center;
+}
+
+.topLogo img {
+    width: 150px;
+}
+
+.gnb {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-20%);
+    align-items: center;
+}
+
+.gnb li,
+.gnb select {
+    padding: 5px 8px;
+}
+
+.gnb li a,
+.gnb select {
+    color: #fff;
+    font-size: 12px;
+    font-family: NanumBarunGothicLightSubset;
+}
+
+.gnb li:nth-child(1),
+.gnb li:nth-child(2),
+.gnb select {
+    background-color: #fff;
+    border-radius: 35px;
+    margin-right: 10px;
+}
+
+.gnb li:nth-child(1) {
+    background-color: #0E8844;
+}
+
+.gnb li:nth-child(2) {
+    background-color: #646277;
+}
+
+.gnb select {
+    background: url(../image/hearder-select-bg.gif) no-repeat right 10px #41414c;
+}
+
+.gnb li:nth-child(1),
+.gnb li:nth-child(2) {
+    width: 60px;
+}
+
+
+/* 좌측 전역메뉴 */
+.leftMenu {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-25%);
+
+}
