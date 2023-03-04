@@ -48,7 +48,7 @@
 
 .gnb li a,
 .gnb select {
-    font-size: 12px;
+    font-size: 15px;
     font-family: NanumBarunGothicLightSubset;
 }
 
@@ -59,7 +59,7 @@
     background-color: #fff;
     border-radius: 35px;
     margin-right: 10px;
-    width: 60px;
+    width: 75px;
     box-sizing: content-box;
 }
 
@@ -74,7 +74,7 @@
 .gnb select {
     background: url(../image/hearder-select-bg.gif) no-repeat right 10px #41414c;
     width: 70px;
-    font-size: 15px;
+    font-size: 13px;
 }
 
 
@@ -90,30 +90,27 @@
     position: fixed;
     right: 15px;
     z-index: 10;
+    width: 60px;
+    height: 60px;
 }
 
 .goTop {
     bottom: 15px;
+    background: url(../image/top_btn.png) no-repeat;
 }
 
 .chatBot {
-    bottom: 90px;
+    bottom: 95px;
+    background: url(../image/ic_chat.png) no-repeat;
+    background-size: contain;
 }
 
 /* 하단 추가정보 서브메뉴 박스  */
 .addInfo_box {
-    width: 100vw;
-    padding: 20px;
+    width: 100%;
     position: absolute;
-    bottom: 80px;
+    padding: 15px 25px;
     background-color: #1d2335;
-    max-width: 1250px;
-}
-
-.bottom_subMenu {
-    float: left;
-}
-
-.bottom_sns {
-    float: right;
+    bottom: 40%;
+    /* max-width: 1235px; */
 }

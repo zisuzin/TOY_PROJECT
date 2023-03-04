@@ -1,12 +1,14 @@
 @charset "utf-8";
 
-html,body,div,ul,li,nav {
+html,body,div,ul,li,nav,p {
     margin: 0;
     padding: 0;
 }
 
 html,body {
     overflow-x: hidden;
+    width: 100%;
+    height: 100h;
 }
 
 body {
@@ -22,9 +24,9 @@ ul,ol {
 a,select {
     text-decoration: none;
     color: #fff;
+    outline: none;
 }
 
 img {
-    border: none;
     vertical-align: bottom;
 }
