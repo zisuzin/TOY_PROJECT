@@ -5,3 +5,59 @@
 @import url(./common.css);
 @import url(./fonts.css);
 
+/* B. 메인영역 */
+
+/* 메인 좌측 서브 메뉴바 공통*/
+.Submenu_item_list,
+.anniversary_logo {
+    position: absolute;
+    text-align: center;
+    left: 40px;
+    z-index: 999;
+    /* top: 0; */
+}
+
+.Submenu_item_list {
+    width: 90px;
+    top: 20%;
+    margin-left: -30px;
+}
+
+.Submenu_item_list a::before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    background-size: cover;
+    width: 60px;
+    height: 60px;
+}
+
+.Submenu_item_list a:nth-child(1)::before {
+    background: url(../image/mqn_icon.png) no-repeat center/50%;
+}
+
+.Submenu_item_list a:nth-child(2)::before {
+    background: url(../image/mf-rt-r_icon01.png) no-repeat;
+}
+
+.Submenu_item_list a:nth-child(3)::before {
+    background: url(../image/mf-rt-r_icon07.png) no-repeat;
+}
+
+.Submenu_item_list span {
+    color: #fff;
+    /* margin-top: 20px; */
+}
+
+/* 기념일 로고 이미지 */
+.anniversary_logo {
+    width: 100px;
+    height: 87px;
+    top: 50%;
+}
+
+.anniversary_logo img {
+    max-width: 100%;
+    max-height: 100%;
+}
