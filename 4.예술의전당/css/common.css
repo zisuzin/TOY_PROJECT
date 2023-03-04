@@ -22,7 +22,7 @@
     height: calc(100% - 50px);
 }
 
-/* 로고 */
+/* 1. 로고 */
 .topLogo {
     text-align: center;
 }
@@ -31,7 +31,7 @@
     width: 150px;
 }
 
-/* 우측 GNB메뉴 */
+/* 2. 우측 GNB메뉴 */
 .gnb {
     position: absolute;
     right: 0;
@@ -78,14 +78,15 @@
 }
 
 
-/* 좌측 전역메뉴 */
+/* 3. 좌측 전역메뉴 */
 .leftMenu {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
 }
 
-/* 우측 하단 사이드 버튼 공통 */
+/* C. 하단영역 */
+/* 1. 우측 하단 사이드 버튼 공통 */
 .btn {
     position: fixed;
     right: 15px;
@@ -105,12 +106,71 @@
     background-size: contain;
 }
 
-/* 하단 추가정보 서브메뉴 박스  */
-.addInfo_box {
+
+/* 2. 하단 추가정보1 서브메뉴 박스  */
+.AddInfo_box {
+    position: fixed;
     width: 100%;
-    position: absolute;
-    padding: 15px 25px;
+    /* height: 27px; */
+    bottom: 20%;
     background-color: #1d2335;
-    bottom: 40%;
-    /* max-width: 1235px; */
+    z-index: 999;
 }
+
+.AddInfo_box a:nth-child(1)~a {
+    padding-left: 20px;
+}
+
+
+.Bottom_SubMenu {
+    padding-left: 50px;
+}
+
+.Bottom_Sns {
+    padding-right: 50px;
+}
+
+.Bottom_Info_Wrap1 {
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* 3. 하단 추가정보2 서브메뉴 박스  */
+#Bottom_Info_Bx{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #000;
+}
+
+.Bottom_Info_Wrap2 {
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.Bottom_Info_Wrap1 a,
+.Bottom_Info_Wrap2 p {
+    color: #747780;
+    font-size: 13px;
+}
+
+.Bottom_Info_Wrap2 strong {
+    color: #b8b8b8;
+    padding-right: 5px;
+}
+
+/* 3. 하단로고  */
+.Bottom_Logo {
+    width: 158px;
+    height: 58px;
+}
+
+.Bottom_Logo img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
