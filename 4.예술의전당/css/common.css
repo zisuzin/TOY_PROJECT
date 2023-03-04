@@ -48,7 +48,6 @@
 
 .gnb li a,
 .gnb select {
-    color: #fff;
     font-size: 12px;
     font-family: NanumBarunGothicLightSubset;
 }
@@ -99,4 +98,22 @@
 
 .chatBot {
     bottom: 90px;
+}
+
+/* 하단 추가정보 서브메뉴 박스  */
+.addInfo_box {
+    width: 100vw;
+    padding: 20px;
+    position: absolute;
+    bottom: 80px;
+    background-color: #1d2335;
+    max-width: 1250px;
+}
+
+.bottom_subMenu {
+    float: left;
+}
+
+.bottom_sns {
+    float: right;
 }
