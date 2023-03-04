@@ -2,7 +2,7 @@
 
 /* A. 상단영역  */
 #headerWrap {
-    width: 100%;
+    width: 100vw;
     height: 110px;
     top: 0;
     position: fixed;
@@ -13,16 +13,16 @@
 .headerBar {
     padding: 0 70px;
     height: 100%;
-    /* margin: 0 auto; */
 }
 
 .topHeader {
+    width: 100%;
     padding: 25px 0;
     position: relative;
     height: calc(100% - 50px);
-    width: 100%;
 }
 
+/* 로고 */
 .topLogo {
     text-align: center;
 }
@@ -31,18 +31,19 @@
     width: 150px;
 }
 
+/* 우측 GNB메뉴 */
 .gnb {
-    display: flex;
     position: absolute;
     right: 0;
     top: 50%;
-    transform: translateY(-20%);
-    align-items: center;
+    transform: translateY(-50%);
+    text-align: center;
 }
 
 .gnb li,
 .gnb select {
-    padding: 5px 8px;
+    display: inline-block;
+    padding: 10px 8px;
 }
 
 .gnb li a,
@@ -52,12 +53,15 @@
     font-family: NanumBarunGothicLightSubset;
 }
 
+/* 돋보기,전체일정,사이트맵 li제외 */
 .gnb li:nth-child(1),
 .gnb li:nth-child(2),
 .gnb select {
     background-color: #fff;
     border-radius: 35px;
     margin-right: 10px;
+    width: 60px;
+    box-sizing: content-box;
 }
 
 .gnb li:nth-child(1) {
@@ -70,11 +74,8 @@
 
 .gnb select {
     background: url(../image/hearder-select-bg.gif) no-repeat right 10px #41414c;
-}
-
-.gnb li:nth-child(1),
-.gnb li:nth-child(2) {
-    width: 60px;
+    width: 70px;
+    font-size: 15px;
 }
 
 
@@ -82,6 +83,20 @@
 .leftMenu {
     position: absolute;
     top: 50%;
-    transform: translateY(-25%);
+    transform: translateY(-50%);
+}
 
+/* 우측 하단 사이드 버튼 공통 */
+.btn {
+    position: fixed;
+    right: 15px;
+    z-index: 10;
+}
+
+.goTop {
+    bottom: 15px;
+}
+
+.chatBot {
+    bottom: 90px;
 }

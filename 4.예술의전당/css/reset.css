@@ -11,6 +11,8 @@ html,body {
 
 ul,ol {
     list-style: none;
+    /* ul밑 li에 display: inline-block으로 생긴 사이 여백 초기화  */
+    font-size: 0;
 }
 
 a {
