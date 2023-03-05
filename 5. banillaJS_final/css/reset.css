@@ -1,9 +1,13 @@
 @charset "utf-8";
 
+* {
+    box-sizing: border-box;
+
+}
+
 html,body,cont,p,a,h1,h2 {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 html,body {
@@ -20,3 +24,12 @@ ul,ol {
 img {
     vertical-align: bottom;
 }
+
+input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 15px;
+}
+
+input::-webkit-input-placeholder { color: #fff;}

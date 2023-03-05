@@ -1,3 +1,4 @@
+
 const quotes = [
 {
     quote: "Life is either a daring \n adventure or nothing at all.",

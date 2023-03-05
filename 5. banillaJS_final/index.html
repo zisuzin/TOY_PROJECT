@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>노마드 바닐라JS챌린지</title>
+    <title>MOMENTUM</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
-    <script src="./js/quote.js"></script>
 </head>
 <body>
     <div id="container">
@@ -38,16 +38,29 @@
                     
                     <h2 class="title">TODAY</h2>
                     <div class="today">
-                        <div class="clock"></div>
-                        <div class="calender"></div>
+                        <div class="clock_wrap">
+                            <div class="clock"></div>
+                            <p class="digital">00:00:00</p>
+                        </div>
+                        <div class="calendar">
+                            <div id="dycalendar"></div>
+                        </div>
                     </div>
                 </div>
 
             <div class="right_main">
                 <h2>TO DO</h2>
                 <div class="Todo_wrap">
-                    <ul class="Todo_list">
-                    </ul>
+                    <div class="Todo_List">
+                        <ul>
+                        </ul>
+                    </div>
+                    <form class="todoWrite">
+                        <input type="text" required placeholder="Enter your task">
+                        <button type="button">
+                            <i class="fas fa-plus-circle"></i>
+                        </button>
+                    </form>
                 </div>
                 <h2>TODAY QUOTE</h2>
                 <div class="quote_bg">
@@ -59,5 +72,10 @@
             </div>
         </main>
     </div>
+
+    <script src="./js/quote.js"></script>
+    <script src="./js/todo.js"></script>
+    <script src="./js/clock.js"></script>
+    <script src="./js/calendar.js"></script>
 </body>
 </html>

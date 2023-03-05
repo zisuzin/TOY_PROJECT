@@ -1,6 +1,7 @@
 @charset "utf-8";
 
 @import url(./reset.css);
+@import url(./calendar.css);
 
 @font-face {
     font-family: 'TheJamsil5Bold';
@@ -109,7 +110,7 @@ h2, p {
 }
 
 .clock,
-.calender {
+.calendar {
     width: 150px;
     height: 350px;
     bottom: 0;
@@ -166,3 +167,98 @@ h2,title,p {
     margin-top: -20px;
     font-weight: 400;
 }
+
+.Todo_List{
+    overflow: auto;
+    height: 87%;
+}
+
+.todoWrite {
+    display: flex;
+    bottom: 50%;
+    justify-content: space-between;
+    border-radius: 0 0 10px 10px;
+    background-color: #00b0ff;
+    padding: 7px;
+}
+
+.clock {
+    background: url(../image/clock.png) center/100%;
+    background-repeat: no-repeat;
+
+}
+
+.clock_wrap {
+    width: 150px;
+    display: flex;
+    height: 180px;
+    margin-bottom: -154px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.digital {
+    font-size: 25px;
+    color: #00b0ff;
+}
+
+.todoWrite button {
+    border: none;
+    right: 10px;
+    background-color: transparent;
+    font-size: 30px;
+    color: #fff;
+}
+
+/* 수정 필요! */
+ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 110px;
+    background: #eee;
+    font-size: 18px;
+    height: 30px;
+    transition: 0.3s;
+    font-family: 'KyoboHandwriting2021sjy';
+  }
+  
+  ul li:hover {
+    background: #ddd;
+  }
+  
+  .close {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    align-items: center;
+    text-align: center;
+    margin: 8px 60px;
+    padding: 4px 8px;
+    border: none;
+    background: rgba(255, 255, 255, 0);
+  }
+  .close:hover {
+    background: linear-gradient(135deg, #02aab0, #00cdac);
+    border-radius: 100%;
+    color: white;
+  }
+  
+  ul li.checked {
+    background: #ddd;
+    color: #272341;
+    text-decoration: line-through;
+  }
+  
+  ul li.checked::before {
+    content: "";
+    position: absolute;
+    border-color: #272341;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 13px;
+    left: 80px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+  }
+  
