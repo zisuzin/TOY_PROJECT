@@ -27,20 +27,17 @@ const quotes = [
 ];
 
 
-
-
-
-
-
 // TODAY QUOTE 배경이미지 변경
-const imgs = ["img1","img2","img3","img4","img5","img6"];
+const imgs = ["img1.jpg","img2.jpg","img3.jpg","img4.jpg","img5.jpg","img6.jpg"];
 const bg = document.querySelector(".quote_bg");
 const changeImg = imgs[Math.floor(Math.random()*imgs.length)];
 
 // console.log(imgs);
 
-const bgImg = document.createElement("img");
-bgImg.src = `image/${changeImg}.jpg`;
+// bg.style.background = url(`../image/${changeImg}`);
+
+// const bgImg = document.querySelector("img");
+// bgImg.src = `image/${changeImg}`;
 
 //bg.style.backgroundImage = bgImg;
 
@@ -53,11 +50,11 @@ window.onload = function() {
 
 
     const today_quote = quotes[Math.floor(Math.random()*quotes.length)];
-    quoteBg.addEventListener('click', changeText);
+    // quoteBg.addEventListener('click', changeText);
 
-    function changeText(){
+    // function changeText(){
         console.log(today_quote);
         quote.innerText = today_quote.quote;
         author.innerText = today_quote.author;
-    }
+    // }
 };
