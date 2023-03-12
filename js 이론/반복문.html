@@ -21,11 +21,21 @@
 
         // 함수
         function bok(main){ // 매개변수 - 함수에서 사용하려는 인자를 받는 공간
-            console.log(`${main} 볶음밥`);
+            // console.log(`${main} 볶음밥`);
         }
 
         bok("김치");
         bok("야채");
+
+        // 유사배열객체 
+        const array = {
+            0: '',
+            1: '',
+        };
+
+        const arr = Array.from(array);
+        console.log(arr);
+        // console.log(Array.isArray(arr));
     </script>
 </head>
 <body>
