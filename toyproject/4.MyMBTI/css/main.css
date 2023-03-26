@@ -3,6 +3,7 @@
 @import url(./default.css);
 @import url(./reset.css);
 @import url(./fonts.css);
+@import url(./ani.css);
 
 #main {
     background-color: #fff;
