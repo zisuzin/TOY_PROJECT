@@ -35,22 +35,7 @@ ol {
 }
 
 
-
 /**************************************/
-
-
-#container {
-    /*최상위부모*/
-    position: relative;
-    width: 1381px;
-    margin: 0px auto;
-}
-
-#container>header {
-    position: relative;
-    width: 100%;
-    height: 222px;
-}
 
 /* 타이틀 */
 .tit{
@@ -129,3 +114,28 @@ ol {
     right: 50px;
 }
 
+/* 블릿버튼 */
+.indic {
+    display: flex;
+    position: absolute;
+    bottom: 50px;
+    left: 80px;
+}
+
+.indic li {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.indic li img {
+    position: absolute;
+}
+
+.indic li img:last-child {
+    opacity: 0;
+}
+
+.indic li.on img:last-child {
+    opacity: 1;
+}
