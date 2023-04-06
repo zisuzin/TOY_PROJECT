@@ -79,7 +79,7 @@
     for (let i = 0; i < 2; i++) chgSeq();
 
     // 광클금지변수 : 0 - 허용, 1 - 불허용
-    let prot = 0;
+    // let prot = 0;
 
     // 2. 슬라이드 변경함수 만들기
     // 호출시 seq에 들어오는 값중 1은 오른쪽, 0은 왼쪽
@@ -87,11 +87,11 @@
         //  console.log("슬고우!", seq);
 
         // 광클금지 설정하기 //////
-        if (prot) return;
-        prot = 1; // 잠금!
-        setTimeout(() => {
-            prot = 0; // 해제!
-        }, 400); /// 0.4초후 해제! ///
+        // if (prot) return;
+        // prot = 1; // 잠금!
+        // setTimeout(() => {
+        //     prot = 0; // 해제!
+        // }, 400); /// 0.4초후 해제! ///
 
         //  console.log("나,들어왔어!!!");
 
