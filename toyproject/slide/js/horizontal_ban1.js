@@ -87,11 +87,11 @@
         //  console.log("슬고우!", seq);
 
         // 광클금지 설정하기 //////
-        // if (prot) return;
-        // prot = 1; // 잠금!
-        // setTimeout(() => {
-        //     prot = 0; // 해제!
-        // }, 400); /// 0.4초후 해제! ///
+        if (prot) return;
+        prot = 1; // 잠금!
+        setTimeout(() => {
+            prot = 0; // 해제!
+        }, 400); /// 0.4초후 해제! ///
 
         //  console.log("나,들어왔어!!!");
 
