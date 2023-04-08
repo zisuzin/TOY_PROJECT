@@ -1,9 +1,0 @@
-@charset "utf-8";
-
-/* 나눔바른고딕 */
-@font-face {
-    font-family: NanumBarunGothicLightSubset;
-    src: url(../css/fonts/NanumBarunGothicLightSubset.woff) format("woff");
-    font-style: normal;
-}
-
