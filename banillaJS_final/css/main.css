@@ -99,13 +99,25 @@ h2, p {
     background-color: #039be5;
 }
 
-.today {
+.todayBox {
     display: flex;
     justify-content: space-around;
     align-items: center;
     height: 320px;
     border-radius: 10px;
     background-color: #eeeeee;
+}
+
+.left_wrap {
+    width: 40%;
+    height: 100%;
+    position: relative;
+    margin-left: 10px;
+}
+
+.right_wrap {
+    width: 60%;
+    position: relative;
 }
 
 .clock,
@@ -115,14 +127,12 @@ h2, p {
     bottom: 0;
 }
 
-.tite {
-    line-height: 20px;
+.tit {
+    line-height: 60px;
 }
 
-h2,title,p {
-    /* line-height: 62px; */
+h2, p {
     font-family: 'TheJamsil5Bold';
-    
 }
 
 .Todo_wrap {
@@ -136,7 +146,7 @@ h2,title,p {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 120px;
+    height: 100px;
     border-radius: 10px;
 }
 
@@ -148,7 +158,7 @@ h2,title,p {
 
 .img_cover {
     position: absolute;
-    filter: brightness(90%);
+    filter: brightness(70%);
 }
 
 .quoteText {
@@ -164,8 +174,8 @@ h2,title,p {
 
 .quoteText p:first-child {
     font-style: italic;
-    line-height: 28px;
-    font-size: 16px;
+    line-height: 23px;
+    font-size: 14px;
     height: 70%;
     display: flex;
     justify-content: center;
@@ -176,8 +186,8 @@ h2,title,p {
 
 .quoteText p:last-child {
     float: right;
-    font-size: 12px;
-    margin-top: 5px;
+    font-size: 10px;
+    margin-top: -2px;
     font-weight: 400;
 }
 
@@ -188,24 +198,89 @@ h2,title,p {
 
 .todoWrite {
     display: flex;
-    bottom: 50%;
     justify-content: space-between;
     border-radius: 0 0 10px 10px;
-    background-color: #00b0ff;
+    background-color: #81d4fa;
     padding: 7px;
+}
+
+.clock .hour,
+.clock .min,
+.clock .sec {
+    position: absolute;
+}
+
+#hr, #mn, #sc {
+    display: flex;
+    justify-content: center;
+} 
+
+.clock .hour > #hr {
+    width: 50px;
+    height: 60px;
+}
+
+.clock .min > #mn {
+    width: 90px;
+    height: 90px;
+}
+
+.clock .sec > #sc {
+    width: 90px;
+    height: 90px;
+}
+
+#hr::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 30px;
+    background-color: #29b6f6;
+    border-radius: 6px;
+}
+
+#mn::before {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 45px;
+    background-color: #039be5;
+    border-radius: 6px;
+}
+
+#sc::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 60px;
+    background-color: #abe3ff;
+    border-radius: 6px;
 }
 
 .clock {
     background: url(../image/clock.png) center/100%;
     background-repeat: no-repeat;
+    width: 140px;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.clock::before {
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background-color: #81d4fa;
+    border-radius: 50%;
 }
 
 .clock_wrap {
+    position: absolute;
+    bottom: 10px;
     width: 150px;
     display: flex;
-    height: 180px;
-    margin-bottom: -154px;
     flex-direction: column;
     align-items: center;
 }

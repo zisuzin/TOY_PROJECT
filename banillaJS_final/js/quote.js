@@ -29,12 +29,12 @@ const quotes = [
 
 
 const imgs = ["img1","img2","img3","img4","img5","img6"];
+const chosenImg = imgs[Math.floor(Math.random()*imgs.length)];
 
 // TODAY QUOTE 배경이미지 변경
 function quoteRan() {
     /* bg 이미지 영역 */
     const quoteBg = document.querySelector(".img_cover");
-    const changeImg = imgs[Math.floor(Math.random()*imgs.length)];
     /* quote 텍스트 영역 */
     const quote = document.querySelector(".quoteText p:first-child");
     const author = document.querySelector(".quoteText p:last-child");
@@ -43,10 +43,9 @@ function quoteRan() {
 
     quote.innerText = today_quote.quote;
     author.innerHTML = today_quote.author;
-    
-    for(let i=1; i<imgs.length+1; i++) {
-        quoteBg.innerHTML = `<img src="./image/img${i}.jpg" alt="배경이미지">`;
-    }
+    const createImg = document.createElement('img');
+    createImg.src = `./image/${chosenImg}.jpg`;
+    quoteBg.appendChild(createImg);   
 }
 
 quoteRan();
