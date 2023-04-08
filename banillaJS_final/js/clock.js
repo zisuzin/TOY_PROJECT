@@ -16,9 +16,8 @@ function getClock(){
 // 아날로그시계 
 function getAnalogClock() {
     const today = new Date();
-    // const hh = today.getHours() * 30;
-    const hh = today.getHours();
-    console.log(hh)
+    const hh = today.getHours() * 30;
+    // console.log(hh) // 18 : 6시 
     const mm = today.getMinutes() * deg;
     const ss = today.getSeconds() * deg;
 

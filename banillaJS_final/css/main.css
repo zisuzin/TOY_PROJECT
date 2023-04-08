@@ -117,7 +117,36 @@ h2, p {
 
 .right_wrap {
     width: 60%;
+    height: 320px;
     position: relative;
+    padding: 10px;
+}
+
+table > tbody > tr th, 
+table > tbody > tr td {
+    padding: 5px;
+}
+
+th {
+    font-weight: normal;
+}
+
+.calendar_header {
+    position: relative;
+    text-align: center;
+    color: #00b0ff;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.prev_btn {
+    position: absolute;
+    left: 0;
+}
+
+.next_btn {
+    position: absolute;
+    right: 0;
 }
 
 .clock,
