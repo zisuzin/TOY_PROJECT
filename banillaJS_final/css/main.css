@@ -229,7 +229,7 @@ h2, p {
     display: flex;
     justify-content: space-between;
     border-radius: 0 0 10px 10px;
-    background-color: #81d4fa;
+    background-color: #00b0ff;
     padding: 7px;
 }
 
@@ -337,13 +337,13 @@ ul li {
     height: 30px;
     transition: 0.3s;
     font-family: 'KyoboHandwriting2021sjy';
-  }
+}
   
-  ul li:hover {
+ul li:hover {
     background: #ddd;
-  }
-  
-  .close {
+}
+
+.close {
     position: absolute;
     right: 10px;
     top: 0;
@@ -353,20 +353,20 @@ ul li {
     padding: 4px 8px;
     border: none;
     background: rgba(255, 255, 255, 0);
-  }
-  .close:hover {
+}
+.close:hover {
     background: linear-gradient(135deg, #02aab0, #00cdac);
     border-radius: 100%;
     color: white;
-  }
-  
-  ul li.checked {
+}
+
+ul li.checked {
     background: #ddd;
     color: #272341;
     text-decoration: line-through;
-  }
-  
-  ul li.checked::before {
+}
+
+ul li.checked::before {
     content: "";
     position: absolute;
     border-color: #272341;
@@ -377,5 +377,24 @@ ul li {
     transform: rotate(45deg);
     height: 15px;
     width: 7px;
-  }
-  
+}
+
+#dark_mode_btn {
+    position: fixed;
+    right: 78px;
+    z-index: 100;
+    width: 136px;
+    height: 50px;
+    cursor: pointer;
+    background-image: url(../image/sp_main.png);
+    background-size: 442px 428px;
+    background-position: -714px -111px;
+    background-color: transparent;
+    border: none;
+    bottom: 30px;
+    right: 30px;
+}
+
+#dark_mode_btn:hover {
+    background-position: -714px -56px;
+}
