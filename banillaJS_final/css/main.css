@@ -11,15 +11,16 @@
 
 :root {
     --space-1: 32px;
-    --dark-main-color: #312d68;
-    --gray-color: #A2A2A2;
+    --bg-color: #fff;
+    --gray-color: #eeeeee;
     --light-gray-color: #f2f2f2;
-    --main-color: #6d5ef2;
+    --main-color: #00b0ff;
+    --main-light-color: #81d4fa;
 }
 
 a {
     text-decoration: none;
-    color: #00b0ff;
+    color: var(--main-color);
     font-weight: bold;
     font-size: 18px;
 }
@@ -38,7 +39,7 @@ h2, p {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fff;
+    background-color: var(--bg-color);
 }
 
 .cont {
@@ -46,9 +47,9 @@ h2, p {
     display: flex;
     justify-content: space-around;
     margin: var(--space-1) 0;
-    background-color: #fff;
+    background-color: var(--bg-color);
     border-radius: 20px;
-    box-shadow: 10px 10px 30px var(--gray-color);
+    box-shadow: 10px 10px 30px #A2A2A2;
 }
 
  .left_main {
@@ -71,7 +72,7 @@ h2, p {
     align-items: center;
     justify-content: space-around;
     border-radius: 10px;
-    background-color: #eeeeee;
+    background-color: var(--gray-color);
 }
 
 .colorPicker {
@@ -105,7 +106,7 @@ h2, p {
     align-items: center;
     height: 320px;
     border-radius: 10px;
-    background-color: #eeeeee;
+    background-color: var(--gray-color);
 }
 
 .left_wrap {
@@ -119,7 +120,7 @@ h2, p {
     width: 60%;
     height: 320px;
     position: relative;
-    padding: 10px;
+    padding: 20px 10px;
 }
 
 table > tbody > tr th, 
@@ -134,9 +135,10 @@ th {
 .calendar_header {
     position: relative;
     text-align: center;
-    color: #00b0ff;
+    color: var(--main-color);
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .prev_btn {
@@ -166,7 +168,7 @@ h2, p {
 
 .Todo_wrap {
     height: 400px;
-    background-color: #eeeeee;
+    background-color: var(--gray-color);
     border-radius: 10px;
 }
 
@@ -198,7 +200,7 @@ h2, p {
 }
 
 .quoteText > p {
-    color: #fff;
+    color: var(--bg-color);
 }
 
 .quoteText p:first-child {
@@ -229,7 +231,7 @@ h2, p {
     display: flex;
     justify-content: space-between;
     border-radius: 0 0 10px 10px;
-    background-color: #00b0ff;
+    background-color: var(--main-color);
     padding: 7px;
 }
 
@@ -316,7 +318,7 @@ h2, p {
 
 .digital {
     font-size: 25px;
-    color: #00b0ff;
+    color: var(--main-color);
 }
 
 .todoWrite button {
@@ -324,26 +326,10 @@ h2, p {
     right: 10px;
     background-color: transparent;
     font-size: 30px;
-    color: #fff;
+    color: var(--bg-color);
 }
 
-/* 수정 필요! */
-ul li {
-    cursor: pointer;
-    position: relative;
-    padding: 12px 8px 12px 110px;
-    background: #eee;
-    font-size: 18px;
-    height: 30px;
-    transition: 0.3s;
-    font-family: 'KyoboHandwriting2021sjy';
-}
-  
-ul li:hover {
-    background: #ddd;
-}
-
-.close {
+/* .close {
     position: absolute;
     right: 10px;
     top: 0;
@@ -357,7 +343,7 @@ ul li:hover {
 .close:hover {
     background: linear-gradient(135deg, #02aab0, #00cdac);
     border-radius: 100%;
-    color: white;
+    color: var(--bg-color);
 }
 
 ul li.checked {
@@ -377,7 +363,7 @@ ul li.checked::before {
     transform: rotate(45deg);
     height: 15px;
     width: 7px;
-}
+} */
 
 #dark_mode_btn {
     position: fixed;
@@ -397,4 +383,33 @@ ul li.checked::before {
 
 #dark_mode_btn:hover {
     background-position: -714px -56px;
+}
+
+.week, .dates {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.day, .date {
+    width: calc(100%/7);
+    text-align: center;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.date:nth-child(7n+1),
+.day:nth-child(7n+1) {
+    color: red;
+}
+
+.date:nth-child(7n),
+.day:nth-child(7n) {
+    color: blue;
+}
+
+.today {
+    background-color: var(--main-color);
+    border-radius: 5px;
+    font-weight: 600;
+    color: var(--bg-color) !important;
 }
