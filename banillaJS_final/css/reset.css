@@ -31,3 +31,4 @@ input {
 }
 
 input::-webkit-input-placeholder { color: #fff;}
+#search-form ::-webkit-input-placeholder {color: #ccc;}
