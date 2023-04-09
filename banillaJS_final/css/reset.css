@@ -11,9 +11,7 @@ html,body,cont,p,a,h1,h2 {
 }
 
 html,body {
-    overflow-x: hidden;
     width: 100%;
-    height: 100h;
     user-select: none;
 }
 
