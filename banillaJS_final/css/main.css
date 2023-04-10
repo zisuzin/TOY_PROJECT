@@ -43,10 +43,14 @@ h2, p {
 }
 
 .cont {
-    min-width: 900px;
+    width: 900px;
+    height: fit-content;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     display: flex;
     justify-content: space-around;
-    margin: var(--space-1) 0;
+    align-items: center;
     background-color: var(--bg-color);
     border-radius: 20px;
     box-shadow: 10px 10px 30px #A2A2A2;
