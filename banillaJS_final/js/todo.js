@@ -10,7 +10,7 @@ function addList() {
     let inputv = document.querySelector(".todoWrite input").value;
     if(inputv != null) {
         todos.push(inputv);
-        // console.log(todos)
+        console.log(todos)
         document.querySelector(".todoWrite input").value = "";
         document.querySelector(".todoWrite input").focus();
     }
@@ -21,7 +21,10 @@ function addList() {
 function createList() {
     let hcode = "<ul>"
     for(let i=0; i<todos.length; i++) {
-        hcode += "<li>" + todos[i] + "<span class='close' id="+ i +">" + "<i class='fa-regular fa-trash-can'>" + "\u00D7" + "</i></span></li>";
+        hcode += "<div class='itemwrap'>"
+        hcode += "<li>" + todos[i] + "</li>";
+        hcode += "<li class='close' id="+ i +">" + "\u00D7" + "</li>";
+        hcode += "</div>"
     }
     hcode += "</ul>";
     document.querySelector(".Todo_List").innerHTML = hcode;

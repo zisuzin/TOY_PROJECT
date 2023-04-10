@@ -28,12 +28,12 @@
     cursor: pointer;
 }
 
-ul li.checked {
+.Todo_List > ul li.checked {
     color: gray;
     text-decoration: line-through;
 }
 
-ul li.checked::before {
+.Todo_List > ul li.checked::before {
     content: '';
     position: absolute;
     border-color: gray;
@@ -48,12 +48,28 @@ ul li.checked::before {
 .Todo_List > ul > li {
     margin-top: 10px;
     padding: 0 0 0 20px;
-    display: flex;
-    justify-content: space-between;
 }
 
 .Todo_List > ul {
     margin: 0 auto;
-    width: 340px;
+    margin-top: 10px;
     padding: 0;
+    width: 340px;
+}
+
+.itemwrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Todo_List > ul li > span {
+    position: absolute;
+    right: 30px;
+    padding: 4px 8px;
+    color: #000;
+}
+
+.Todo_List > ul li.close:hover {
+    color: #4687f7;
+    filter: brightness(150%);
 }
