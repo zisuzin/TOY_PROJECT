@@ -1,7 +1,13 @@
 
+const TODOS_KEY = "todos";
 const todos = [];
 const submitBtn = document.querySelector(".todoWrite button");
-// console.log(submitBtn)
+const toDoForm = document.querySelector(".todoWrite");
+
+// 로컬스토리지에 입력값 저장
+function saveToDos() {
+    localStorage.setItem(TODOS_KEY, JSON.stringify(todos));
+}
 
 submitBtn.addEventListener("click", addList);
 
@@ -10,7 +16,6 @@ function addList() {
     let inputv = document.querySelector(".todoWrite input").value;
     if(inputv != null) {
         todos.push(inputv);
-        console.log(todos)
         document.querySelector(".todoWrite input").value = "";
         document.querySelector(".todoWrite input").focus();
     }
@@ -21,10 +26,7 @@ function addList() {
 function createList() {
     let hcode = "<ul>"
     for(let i=0; i<todos.length; i++) {
-        hcode += "<div class='itemwrap'>"
-        hcode += "<li>" + todos[i] + "</li>";
-        hcode += "<li class='close' id="+ i +">" + "\u00D7" + "</li>";
-        hcode += "</div>"
+        hcode += "<li>" + todos[i] + "<span class='close' id="+ i +">" + "<i class='fa-regular fa-trash-can'>" + "\u00D7" + "</i></span></li>";
     }
     hcode += "</ul>";
     document.querySelector(".Todo_List").innerHTML = hcode;
@@ -40,6 +42,7 @@ function deleteList() {
     let id = this.getAttribute("id");
     todos.splice(id,1);
     createList();
+    saveToDos();
 }
 
 let checktodo = document.querySelector(".Todo_List");
@@ -48,3 +51,28 @@ checktodo.addEventListener("click", (e) => {
         e.target.classList.toggle('checked');
     }
 });
+
+// 로컬스토리지에 저장한 입력데이터 불러오기
+toDoForm.addEventListener("submit", handleToDoSummit);
+
+const savedToDos = localStorage.getItem(TODOS_KEY);
+
+if (savedToDos != null) {
+    const parsedToDos = JSON.parse(savedToDos);
+    toDos = parsedToDos;
+    parsedToDos.forEach(paintToDo);
+}
+
+function handleToDoSummit(event) {
+    event.preventDefault();
+    const newTodo = toDoInput.value;
+    toDoInput.value = "";
+    const newTodoObj = {
+        text: newTodo,
+        id: Date.now(),
+        check: 0
+    }
+    todos.push(newTodoObj);
+    paintToDo(newTodoObj);
+    saveToDos();
+}

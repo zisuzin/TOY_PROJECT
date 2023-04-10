@@ -57,11 +57,6 @@
     width: 340px;
 }
 
-.itemwrap {
-    display: flex;
-    justify-content: space-between;
-}
-
 .Todo_List > ul li > span {
     position: absolute;
     right: 30px;
@@ -69,7 +64,7 @@
     color: #000;
 }
 
-.Todo_List > ul li.close:hover {
+.Todo_List > ul li > span:hover {
     color: #4687f7;
     filter: brightness(150%);
 }
