@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+.calendar_header {
+    position: relative;
+    text-align: center;
+    color: var(--main-color);
+    font-weight: 600;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.prev_btn {
+    position: absolute;
+    left: 0;
+}
+
+.next_btn {
+    position: absolute;
+    right: 0;
+}
+
+.week, .dates {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.day, .date {
+    width: calc(100%/7);
+    text-align: center;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.date:nth-child(7n+1),
+.day:nth-child(7n+1) {
+    color: red;
+}
+
+.date:nth-child(7n),
+.day:nth-child(7n) {
+    color: blue;
+}
+
+.today {
+    background-color: var(--main-color);
+    border-radius: 5px;
+    font-weight: 600;
+    color: var(--bg-color) !important;
+}

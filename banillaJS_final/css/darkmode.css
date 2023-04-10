@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+#dark_mode_btn {
+    position: fixed;
+    right: 78px;
+    z-index: 100;
+    width: 136px;
+    height: 50px;
+    cursor: pointer;
+    background-image: url(../image/sp_main.png);
+    background-size: 442px 428px;
+    background-position: -714px -111px;
+    background-color: transparent;
+    border: none;
+    bottom: 30px;
+    right: 30px;
+}
+
+#dark_mode_btn:hover {
+    background-position: -714px -56px;
+}
