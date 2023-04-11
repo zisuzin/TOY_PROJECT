@@ -20,12 +20,20 @@
     background-position: -714px -56px;
 }
 
-.on {
+#dark_mode_btn.on {
     background-position: -714px -3px !important;
     width: 144px !important;
 }
 
-.on:hover {
+#container.on {
+    background-color: #000;
+}
+
+.cont.on {
+    box-shadow: none;
+}
+
+#dark_mode_btn.on:hover {
     background-position: -1px -214px !important;
 }
 
