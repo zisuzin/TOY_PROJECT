@@ -10,6 +10,10 @@ function saveToDos() {
     localStorage.setItem(TODOS_KEY, JSON.stringify(todos));
 }
 
+function sayHello(item) {
+    console.log("this is turn of",item);
+}
+
 // 배열추가 함수
 function addList() {
     let inputv = document.querySelector(".todoWrite input").value;
@@ -23,11 +27,10 @@ function addList() {
 }
 
 const saveTodo = localStorage.getItem(TODOS_KEY);
-// console.log(saveTodo);
 
-if(saveTodo) {
+if(saveTodo !== null) {
     const parsedTodos = JSON.parse(saveTodo);
-    console.log(parsedTodos);
+    parsedTodos.forEach(sayHello);
 }
 
 // 리스트생성 함수
