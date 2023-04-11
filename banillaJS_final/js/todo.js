@@ -1,15 +1,14 @@
 
-const TODOS_KEY = "todos";
+const TODOS_KEY = "todo";
 const todos = [];
 const submitBtn = document.querySelector(".todoWrite button");
 const toDoForm = document.querySelector(".todoWrite");
 
-// 로컬스토리지에 입력값 저장
+submitBtn.addEventListener("click", addList);
+
 function saveToDos() {
     localStorage.setItem(TODOS_KEY, JSON.stringify(todos));
 }
-
-submitBtn.addEventListener("click", addList);
 
 // 배열추가 함수
 function addList() {
@@ -18,8 +17,17 @@ function addList() {
         todos.push(inputv);
         document.querySelector(".todoWrite input").value = "";
         document.querySelector(".todoWrite input").focus();
+        saveToDos();
     }
     createList();
+}
+
+const saveTodo = localStorage.getItem(TODOS_KEY);
+// console.log(saveTodo);
+
+if(saveTodo) {
+    const parsedTodos = JSON.parse(saveTodo);
+    console.log(parsedTodos);
 }
 
 // 리스트생성 함수
@@ -52,27 +60,3 @@ checktodo.addEventListener("click", (e) => {
     }
 });
 
-// 로컬스토리지에 저장한 입력데이터 불러오기
-toDoForm.addEventListener("submit", handleToDoSummit);
-
-const savedToDos = localStorage.getItem(TODOS_KEY);
-
-if (savedToDos != null) {
-    const parsedToDos = JSON.parse(savedToDos);
-    toDos = parsedToDos;
-    parsedToDos.forEach(createList);
-}
-
-function handleToDoSummit(event) {
-    event.preventDefault();
-    const newTodo = toDoInput.value;
-    toDoInput.value = "";
-    const newTodoObj = {
-        text: newTodo,
-        id: Date.now(),
-        check: 0
-    }
-    todos.push(newTodoObj);
-    createList(newTodoObj);
-    saveToDos();
-}

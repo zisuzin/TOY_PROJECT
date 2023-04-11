@@ -38,15 +38,14 @@
     background-position: -1px -214px;
 }
 
-.tit.on {
-    color: #fff;
-}
-
 .contbx.on {
     background-color: #292a2d;
     border: 1px solid var(--main-color);
 }
 
+.week.on,
+.tit.on,
+.Todo_List.on,
 .dates.on {
     color: #fff;
 }
