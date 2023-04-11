@@ -1,4 +1,34 @@
 
+html,body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow-y: hidden;
+}
+
+#container {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: #ffe5b4;
+    z-index: -2;
+}
+
+.garlendar {
+    position: absolute;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 300px;
+    left: 50%;
+}
+
+.garlendar > img {
+    width: 100%;
+    height: 100%;
+}
+
 .cake1 {
     position: absolute;
     width: 200px;
@@ -9,6 +39,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 2;
 }
 
 .cake1::after {
@@ -33,7 +64,7 @@
     top: 52%;
     left: 50%;
     transform: translateX(-50%);
-    z-index: -1;
+    z-index: 1;
 }
 
 .cake2::after {
@@ -50,7 +81,7 @@
 
 .table {
     position: absolute;
-    width: 450px;
+    width: 500px;
     height: 500px;
     top: 42%;
     left: 50%;
@@ -59,6 +90,21 @@
 }
 
 .table > img {
+    width: 100%;
+    height: 100%;
+}
+
+.bowl {
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    top: 64.5%;
+    left: 50%;
+    transform: translate(-50%,0);
+    z-index: -1;
+}
+
+.bowl > img {
     width: 100%;
     height: 100%;
 }
