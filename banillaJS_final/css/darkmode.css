@@ -19,3 +19,13 @@
 #dark_mode_btn:hover {
     background-position: -714px -56px;
 }
+
+.on {
+    background-position: -714px -3px !important;
+    width: 144px !important;
+}
+
+.on:hover {
+    background-position: -1px -214px !important;
+}
+
