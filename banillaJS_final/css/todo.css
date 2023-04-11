@@ -16,7 +16,7 @@
     justify-content: space-between;
     border-radius: 0 0 10px 10px;
     background-color: var(--main-color);
-    padding: 7px;
+    padding: 8px;
 }
 
 .todoWrite button {

@@ -38,7 +38,7 @@
 
 .date:nth-child(7n),
 .day:nth-child(7n) {
-    color: blue;
+    color: #4040ff;
 }
 
 .today {

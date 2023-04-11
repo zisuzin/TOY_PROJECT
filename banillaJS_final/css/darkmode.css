@@ -21,19 +21,32 @@
 }
 
 #dark_mode_btn.on {
-    background-position: -714px -3px !important;
-    width: 144px !important;
+    background-position: -714px -3px;
+    width: 144px;
 }
 
 #container.on {
-    background-color: #000;
+    background-color: #1e1f21;
 }
 
 .cont.on {
     box-shadow: none;
+    background-color: #292a2d;
 }
 
 #dark_mode_btn.on:hover {
-    background-position: -1px -214px !important;
+    background-position: -1px -214px;
 }
 
+.tit.on {
+    color: #fff;
+}
+
+.contbx.on {
+    background-color: #292a2d;
+    border: 1px solid var(--main-color);
+}
+
+.dates.on {
+    color: #fff;
+}

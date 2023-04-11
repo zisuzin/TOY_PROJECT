@@ -26,8 +26,8 @@ a {
 }
 
 h2, p {
-    color: #2d3668;
     font-size: 20px;
+    font-family: 'TheJamsil5Bold';
 }
 
 #container {
@@ -94,8 +94,5 @@ h2, p {
 
 .tit {
     line-height: 60px;
-}
-
-h2, p {
-    font-family: 'TheJamsil5Bold';
+    color: #2d3668;
 }
