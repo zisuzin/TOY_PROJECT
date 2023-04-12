@@ -36,7 +36,7 @@ body {
     border-radius: 50%/25%;
     background-color: #fff;
     border: 2px solid #000;
-    top: 50%;
+    top: 48%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
@@ -61,7 +61,7 @@ body {
     border-radius: 50%/23%;
     background-color: #fff;
     border: 2px solid #000;
-    top: 52%;
+    top: 50%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
@@ -98,7 +98,7 @@ body {
     position: absolute;
     width: 300px;
     height: 100px;
-    top: 64.5%;
+    top: 59%;
     left: 50%;
     transform: translate(-50%,0);
     z-index: -1;
